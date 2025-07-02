@@ -2,31 +2,224 @@
   &-1
     animation: float1 3.5s ease-in-out infinite alternate
     position: absolute
-    top: 20%
-    right: 10%
+    top: 45%
+    left: 5%
   &-2
     animation: float1 2.8s ease-in-out infinite alternate
     position: absolute
-    top: 51%
-    right: 30%
+    top: 31%
+    right: 10%
+  &-3
+    animation: float2 2.8s ease-in-out infinite alternate
+    position: absolute
+    top: 61%
+    right: 24%
 
 @keyframes float1
   0%
     transform: translateY(20px)
   100%
     transform: translateY(0px)
-  
-.banner-principal .tarjeta
-  background-position: left 50% !important
+
+@keyframes float2
+  0%
+    transform: translateX(30px)
+  100%
+    transform: translateX(0px)
+
+.tarjeta-horz
+  display: flex
+  flex-direction: column
+  align-items: center
+  img
+
+  div.texto-tarjeta
+    width: 75%
+    margin: -4em 0 auto 0
+    padding: 1.5em
+    box-shadow: 0 2px 5px rgba(0,0,0,0.17)
+    border-radius: 0.5em
+    background: $white
+    z-index: 10
+    position: relative
 
 .banner-principal__row .banner-principal__img
-  width: 400px !important  
+  margin: 0
+  padding: 2rem 0 0 0!important
 
-.titulo-principal.color-acento-contenido .titulo-principal__numero span
-  color: white !important
+.banner-principal
+  &__info h1, &__info p
+    color: $black
 
-.banner-interno__titulo__icono i
+.banner-interno__fondo
+  background-size: cover
+  background-image: url("../assets/curso/banner.png") !important
+
+.banner-interno__titulo__icono i,
+.banner-interno__titulo h2
   color: $color-primario
 
-figcaption
-  font-weight: normal
+.color-primario-10
+  background-color: #F6EDFB!important
+
+.color-terciario-10
+  &::before
+    background-color: #F5FEF9!important
+
+.color-azul
+  &::before
+    background: #EEFBFF
+  &.bloque-texto-b i
+    color: #54D6FF!important
+
+.color-primario
+  &.cajon
+    background-color: #F6EDFB
+    &::before
+      background-color: $color-primario
+.cajon
+  &.color-acento-contenido
+    background-color: #FFF4E7
+
+.color-terciario
+  background-color: #F5FEF9
+  &.cajon
+    background-color: #F0FEF6
+    &::before
+      background-color: #78EEA3
+
+.bg-terciario
+  background-color: #78EEA3
+
+.bg_grad_slider
+  background-image: url("../assets/curso/temas/tema2/img_26.png")
+  background-size: cover
+  .tarjeta
+    background-color: #FFF
+  .slyder-a__bullets__item
+    background-color: #54D6FF
+    border: 0 none
+  @media (max-width: 768px)
+    margin: 0 5px
+  &--active
+    background-color: #54D6FF
+  .slyder-a__btn--sigt, .slyder-a__btn--atrs
+    background-color: #54D6FF
+    color: $white
+
+.bgblue
+  background-image: url("../assets/curso/temas/tema2/img_27.png")
+  background-size: cover
+  border-bottom-left-radius: 50px
+  border-top-right-radius: 50px
+  .iconoutside
+    width: auto
+    top: 0
+    right: -7%
+    @media screen and (max-width: $bp-max-sm)
+      display: none
+
+.blue-beige:hover
+  &.crd_hover_txt
+    .crd_hover_txt--body
+      background-color: #FFF4E7
+
+h5.bg-primario
+  background-color: $color-primario
+  color: $white
+  max-width: max-content
+  padding: 0.5rem 1rem
+  margin: 0 auto 1rem
+
+.acordion
+  &__activo
+    background-color: #F6EDFB
+    .acordion__accion__btn--a
+      background: #0E3060
+
+  &__accion__btn--a
+    background: #54D6FF
+    transition: 0.3s all
+    i
+      color: $white
+
+.tabla-a
+  caption
+    font-weight: normal
+  th
+    background-color: #78EEA3
+    border: #0E3060 2px solid
+  td
+    border: #0E3060 2px solid
+  thead
+    border-top: None
+
+  &.color-primario
+    th
+      background-color: $color-primario
+      color: $white
+  &.color-acento-contenido
+    th
+      background-color: $color-acento-contenido
+      color: $white
+  &.color-acento-botones
+    th
+      background-color: $color-acento-botones
+      color: $white
+
+.crd--avatarHorizontal > *
+  position: relative
+.crd
+  &::before
+    position: absolute
+    content: ""
+    top: 0px
+    right: 0px
+    width: calc(100% - 60px)
+    height: 100%
+    border-radius: 10rem
+    background-color: #EEFBFF
+
+.tarjeta-avatar > img
+  position: absolute
+  left: 50%
+  top: 0rem
+  transform: translateX(-50%)
+  display: block
+  width: 150px
+  margin: 0 auto
+
+.tabs-b
+  border-bottom: 0 none
+
+@media screen and (max-width: $bp-max-md)
+  .ordenar_div
+    .arriba
+      order: -1
+  .crd
+    &::before
+      border-radius: 1rem
+
+///////// Card hover --------------------------------------
+.crd_hover_txt
+  position: relative
+  padding: 0 !important
+  overflow: hidden !important
+  border-radius: 10px !important
+  &:hover
+    .crd_hover_txt--body
+      transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1)
+      transform: translateY(0)
+
+  .crd_hover_txt--body
+    position: absolute
+    padding: 1.5rem
+    bottom: 0
+    transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1)
+    transform: translateY(calc( 100% - 3.85rem ))
+    background-color: $color-acento-botones
+
+  @media (min-width:1200px) and (max-width:1400px)
+    .crd_hover_txt--body
+      p
+        font-size: 0.85em
